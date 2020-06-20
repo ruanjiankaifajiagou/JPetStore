@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ConfirmOrder</title>
+    <link rel="StyleSheet" href="../css/jpetstore.css" type="text/css" media="screen"/>
+</head>
+<body>
+<header th:replace="common/top"></header>
+<div id="Content">
+    <div id="Catalog">Please confirm the information below and then
+        press continue...
+
+        <table>
+            <tr>
+                <th align="center" colspan="2"><font size="4"><b>Order</b></font>
+                    <br />
+                    <font size="3"><b>
+                    <td th:text="${order.orderDate}" th:pattern="yyyy/MM/dd hh:mm:ss"></td>
+                    </b></font>
+                </th>
+            </tr>
+
+            <tr>
+                <th colspan="2">Billing Address</th>
+            </tr>
+            <tr>
+                <td>First name:</td>
+                <td th:text="${order.billToFirstName}">order.billToFirstName</td>
+            </tr>
+            <tr>
+                <td>Last name:</td>
+                <td th:text="${order.billToLastName}">order.billToLastName</td>
+            </tr>
+            <tr>
+                <td>Address 1:</td>
+                <td th:text="${order.billAddress1}">order.billAddress1</td>
+            </tr>
+            <tr>
+                <td>Address 2:</td>
+                <td th:text="${order.billAddress2}">order.billAddress2</td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td th:text="${order.billCity}">order.billCity</td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td th:text="${order.billState}"></td>
+            </tr>
+            <tr>
+                <td>Zip:</td>
+                <td th:text="${order.billZip}"></td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td th:text="${order.billCountry}"></td>
+            </tr>
+            <tr>
+                <th colspan="2">Shipping Address</th>
+            </tr>
+            <tr>
+                <td>First name:</td>
+                <td th:text="${order.shipToFirstName}">order.shipToFirstName</td>
+            </tr>
+            <tr>
+                <td>Last name:</td>
+                <td th:text="${order.shipToLastName}">order.shipToLastName</td>
+            </tr>
+            <tr>
+                <td>Address 1:</td>
+                <td th:text="${order.shipAddress1}">order.shipAddress1</td>
+            </tr>
+            <tr>
+                <td>Address 2:</td>
+                <td th:text="${order.shipAddress2}">order.shipAddress2</td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td th:text="${order.shipCity}">order.shipCity</td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td th:text="${order.shipState}">order.shipState</td>
+            </tr>
+            <tr>
+                <td>Zip:</td>
+                <td th:text="${order.shipZip}">order.shipZip</td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td th:text="${order.shipCountry}">order.shipCountry</td>
+            </tr>
+
+        </table>
+        <td th:class="Button" th:href="/order/NewOrderForm?orderId=${order.orderId}" th:name="confirmed" th:value="true"> </td>>
+
+<!--        <stripes:link class="Button"-->
+<!--                      beanclass="org.mybatis.jpetstore.web.actions.OrderActionBean"-->
+<!--                      event="newOrder">-->
+<!--            <stripes:param name="confirmed" value="true" />-->
+<!--            Confirm-->
+<!--        </stripes:link>-->
+    </div>
+
+</div>
+<footer th:replace="common/bottom"></footer>
+</body>
+</html>
